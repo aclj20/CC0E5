@@ -2,7 +2,22 @@
 
 #Utilizamos networkx para la construcción del grafo, librería usada en clase
 import networkx as nx
+from io import StringIO
+import sys
+entrada = """2
+3
+10000 0 0
+0 10000 0
+0 0 10000
+3
+5000 0 0
+0 2000 0
+0 0 4000
+"""
 
+print("Entrada usada:\n" + entrada)
+
+sys.stdin = StringIO(entrada)
 #Solución: Buscamos ciclos válidos usando DFS con backtracking, encontramos los ciclos válidos y devolvemos el número de nodos k del ciclo de mayor longitud
 #Función que tiene como entrada un grafo y retorna el número de nodos k del ciclo más largo
 def encontrar_ciclo_mas_largo(G):
